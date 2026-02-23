@@ -1,0 +1,134 @@
+:root {
+    --nfs-blue: #00d2ff;
+    --nfs-dark-blue: #003cff;
+    --nfs-gold: #ffcc00;
+    --glass: rgba(0, 20, 40, 0.8);
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: #000;
+    color: white;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.game-container {
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                url('https://images.unsplash.com/photo-1614200187524-dc4b892acf16?auto=format&fit=crop&q=80&w=2000') center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Top Navigation */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 40px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+}
+
+.currency-group { display: flex; gap: 20px; }
+.currency {
+    background: var(--glass);
+    padding: 5px 15px;
+    border-radius: 4px;
+    border-left: 3px solid var(--nfs-blue);
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.gold { border-left-color: var(--nfs-gold); color: var(--nfs-gold); }
+
+/* Car Info */
+.car-preview {
+    padding-left: 10%;
+    margin-top: 50px;
+}
+
+.pr-badge {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.pr-badge .label { font-size: 1.5rem; color: var(--nfs-blue); font-weight: 900; }
+.pr-badge .value { font-size: 3.5rem; font-weight: 900; font-style: italic; }
+
+.car-title {
+    font-size: 2rem;
+    margin-top: -10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Vertical Menu Shards (The Signature Look) */
+.menu-shards {
+    display: flex;
+    gap: 10px;
+    padding: 40px;
+    height: 250px;
+    align-items: flex-end;
+}
+
+.shard {
+    flex: 1;
+    background: var(--glass);
+    height: 180px;
+    max-width: 180px;
+    transform: skewX(-15deg);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: 0.3s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.shard:hover {
+    height: 200px;
+    background: var(--nfs-dark-blue);
+    border-color: var(--nfs-blue);
+}
+
+.shard.active {
+    border-bottom: 5px solid var(--nfs-blue);
+}
+
+.shard.special {
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+}
+
+.shard-content {
+    transform: skewX(15deg); /* Un-skew text */
+    font-weight: 900;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+/* Bottom Actions */
+.bottom-actions {
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+}
+
+.btn-race {
+    background: linear-gradient(to right, #ff8c00, #ffec00);
+    border: none;
+    padding: 15px 60px;
+    font-size: 1.5rem;
+    font-weight: 900;
+    font-style: italic;
+    transform: skewX(-15deg);
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(255, 140, 0, 0.5);
+}
