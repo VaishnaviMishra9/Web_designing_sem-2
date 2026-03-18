@@ -1,0 +1,48 @@
+.container {
+    width: 600px;
+    height: 400px;
+    background-color: white;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 50px;
+    border-radius: 12px;
+    border: black solid 2px;
+    box-shadow: 5px 5px 10px grey;
+
+}
+#tab1{
+    border-radius: 10px;
+    border: black solid 2px;
+    padding: 5px 10px;
+    background-color: aqua;
+    margin-top: 20px;
+}
+#tab2{
+    border-radius:10px;
+    border: black solid 2px;
+    padding: 5px 10px;
+    background-color:aqua;
+    margin-top:20px;
+}
+#tab3{
+    border-radius:10px;
+    border:black solid 2px;
+    padding: 5px 10px;
+    background-color:aqua;
+    margin-top:20px;
+}
+#tab4{
+    border-radius:10px;
+    border: black solid 2px;
+    padding: 5px 10px;
+    background-color:aqua;
+    margin-top:20px;
+}
+#tab5{
+    border-radius:10px;
+    border:black solid 2px;
+    padding:5px 10px;
+    background-color:aqua;
+    margin-top:20px;
+
+}
