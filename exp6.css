@@ -1,48 +1,61 @@
 .container {
     width: 600px;
     height: 400px;
-    background-color: white;
+    background-color:palevioletred;
     margin: 0 auto;
     text-align: center;
     padding-top: 50px;
     border-radius: 12px;
-    border: black solid 2px;
+    border: rgb(63, 56, 56) solid 2px;
     box-shadow: 5px 5px 10px grey;
-
 }
-#tab1{
-    border-radius: 10px;
-    border: black solid 2px;
-    padding: 5px 10px;
-    background-color: aqua;
+
+#item1{
+    color: blue;
+    font-size: 14px;
+      padding: 5px;
+    background-color: aquamarine;
+    border-radius: 12px;
     margin-top: 20px;
 }
-#tab2{
-    border-radius:10px;
-    border: black solid 2px;
-    padding: 5px 10px;
-    background-color:aqua;
-    margin-top:20px;
+#item2{
+    color: blue;
+    padding: 5px;
+    font-size: 14px;
+    background-color: aquamarine;
+    border-radius: 12px;
+    margin-top: 20px;
 }
-#tab3{
-    border-radius:10px;
-    border:black solid 2px;
-    padding: 5px 10px;
-    background-color:aqua;
-    margin-top:20px;
+#item3{
+    color: blue;
+    font-size: 14px;
+      padding: 5px;
+    background-color: aquamarine;
+    border-radius: 12px;
+    margin-top: 20px;
 }
-#tab4{
-    border-radius:10px;
-    border: black solid 2px;
-    padding: 5px 10px;
-    background-color:aqua;
-    margin-top:20px;
+#item4{
+    color: blue;
+      padding: 5px;
+    font-size: 14px;
+    background-color: aquamarine;
+    border-radius: 12px;
+    margin-top: 20px;
 }
-#tab5{
-    border-radius:10px;
-    border:black solid 2px;
-    padding:5px 10px;
-    background-color:aqua;
-    margin-top:20px;
+#item5{
+    color: blue;
+      padding: 5px;
+    font-size: 14px;
+    background-color: aquamarine;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+.tv{
+   
+    font-size: 20px;
+      padding: 5px;
+      
 
+    border-radius: 12px;
+    margin-bottom: 10px;
 }

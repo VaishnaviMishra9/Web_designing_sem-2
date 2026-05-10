@@ -1,6 +1,21 @@
-.container {
+/* .container{
+    height:400px;
+    width:500px;
+    /* display: flex; */
+    /* flex-direction: column;
+    background-color: peachpuff;
+    border: 2px solid black;
+    text-align: center; 
+    border-radius: 12px;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    
+}
+ */ 
+ .container {
     width: 600px;
-    height: 400px;
+    height: 550px;
     background-color: rgb(89, 89, 163);
     margin: 0 auto;
     text-align: center;
@@ -25,7 +40,7 @@
     
     text-align: center; 
 }
-#number{
+#empId{
     border: red solid 2px;
     border-radius: 12px;
     padding: 5px;
@@ -33,7 +48,7 @@
     
     text-align: center; 
 }
-#text{
+#dept{
     border: red solid 2px;
     border-radius: 12px;
     padding: 5px;

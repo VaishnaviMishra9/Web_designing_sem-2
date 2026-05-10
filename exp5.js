@@ -1,105 +1,99 @@
-let employees = []; 
- 
-function addEmployee() { 
-    let name = document.getElementById("name").value; 
-    let id = document.getElementById("id").value; 
-    let salary = parseFloat(document.getElementById("salary").value); 
-    let department = document.getElementById("department").value; 
- 
-    if (name === "" || id === "" || isNaN(salary) || department === "") { 
-        alert("Please fill all fields properly"); 
-        return; 
-    } 
- 
-    let employee = { 
-        name: name, 
-        id: id, 
-        salary: salary, 
-        department: department 
-    }; 
- 
-    employees.push(employee); 
-    alert("Employee Added Successfully!"); 
- 
-    document.getElementById("name").value = ""; 
-    document.getElementById("id").value = ""; 
-    document.getElementById("salary").value = ""; 
-    document.getElementById("department").value = ""; 
-} 
- 
-function displayEmployees() { 
-    let output = "<h3>All Employees</h3>"; 
- 
-    if (employees.length === 0) { 
-        output += "No employees added yet."; 
-    } 
- 
-    employees.forEach(emp => { 
-        output += ` 
-            Name: ${emp.name} | 
-            ID: ${emp.id} | 
-            Salary: ₹${emp.salary} | 
-            Department: ${emp.department} <br> 
-        `; 
-    }); 
- 
-    document.querySelector(".result").innerHTML = output; 
-} 
- 
-function filterSalary() { 
-    let filtered = employees.filter(emp => emp.salary > 50000); 
- 
-    let output = "<h3>Employees with Salary > ₹50,000</h3>"; 
- 
-    if (filtered.length === 0) { 
-        output += "No employees found."; 
-    } 
- 
-    filtered.forEach(emp => { 
-        output += ` 
-            Name: ${emp.name} | 
-            Salary: ₹${emp.salary} <br> 
-        `; 
-    }); 
- 
-    document.querySelector(".result").innerHTML = output; 
-} 
- 
-function totalSalary() { 
-    let total = employees.reduce((sum, emp) => sum + emp.salary, 0); 
- 
-    document.querySelector(".result").innerHTML = 
-        "<h3>Total Salary Payout: ₹" + total + "</h3>"; 
-} 
- 
-function averageSalary() { 
-    if (employees.length === 0) { 
-        document.querySelector(".result").innerHTML = 
-            "<h3>No employee records available</h3>"; 
-        return; 
-    } 
- 
-    let total = employees.reduce((sum, emp) => sum + emp.salary, 0); 
-    let avg = total / employees.length; 
- 
-    document.querySelector(".result").innerHTML = 
-        "<h3>Average Salary: ₹" + avg.toFixed(2) + "</h3>"; 
-} 
- 
-function sortByDepartment() { 
-    let sorted = [...employees].sort((a, b) => 
-        a.department.localeCompare(b.department) 
-    ); 
- 
-    let output = "<h3>Employees Sorted by Department</h3>"; 
- 
-    sorted.forEach(emp => { 
-        output += ` 
-            Name: ${emp.name} | 
-            Department: ${emp.department} | 
-            Salary: ₹${emp.salary} <br> 
-        `; 
-    }); 
- 
-    document.querySelector(".result").innerHTML = output; 
+// Array to store employee data objects
+// Array to store employee data
+let employees = [];
+
+// ADD
+function addEmployee() {
+    let name = document.getElementById("name").value;
+    let id = document.getElementById("empId").value;
+    let salary = parseFloat(document.getElementById("salary").value);
+    let dept = document.getElementById("dept").value;
+
+    if (!name || !id || !salary || !dept) {
+        alert("Fill all fields");
+        return;
+    }
+
+    employees.push({ name, id, salary, dept });
+
+    //document.getElementById("output").innerHTML =
+        //"<p style='color:green;'>Employee Added Successfully ✅</p>";
+        alert("Employee Added Successfully ✅");
+
+    // clear
+    document.getElementById("name").value = "";
+    document.getElementById("empId").value = "";
+    document.getElementById("salary").value = "";
+    document.getElementById("dept").value = "";
+}
+
+// DISPLAY
+function displayAll() {
+    if (employees.length === 0) {
+        document.getElementById("output").innerHTML = "No employees added.";
+        return;
+    }
+
+    let result = "<h3>All Employees:</h3>";
+
+    employees.forEach(emp => {
+        result += `
+        <p>
+        ${emp.name} | ${emp.id} | ${emp.salary} | ${emp.dept}
+        </p>`;
+    });
+
+    document.getElementById("output").innerHTML = result;
+}
+
+// FILTER
+function salaryFilter() {
+    let filtered = employees.filter(e => e.salary > 50000);
+
+    let result = "<h3>Salary > 50000:</h3>";
+
+    filtered.forEach(e => {
+        result += `<p>${e.name} - ${e.salary}</p>`;
+    });
+
+    document.getElementById("output").innerHTML = result || "No data";
+}
+
+// TOTAL
+function totalSalary() {
+    let total = employees.reduce((sum, e) => sum + e.salary, 0);
+
+    document.getElementById("output").innerHTML =
+        `<h3>Total Salary: ${total}</h3>`;
+}
+
+// AVERAGE
+function averageSalary() {
+    if (employees.length === 0) {
+        document.getElementById("output").innerHTML = "No data";
+        return;
+    }
+
+    let total = employees.reduce((sum, e) => sum + e.salary, 0);
+    let avg = total / employees.length;
+
+    document.getElementById("output").innerHTML =
+        `<h3>Average Salary: ${avg.toFixed(2)}</h3>`;
+}
+
+// COUNT
+function countByDepartment() {
+    let count = {};
+
+    employees.forEach(e => {
+        count[e.dept] = (count[e.dept] || 0) + 1;
+    });
+
+    let result = "<h3>Department Count:</h3>";
+
+    for (let dept in count) {
+        result += `<p>${dept}: ${count[dept]}</p>`;
+    }
+
+    document.getElementById("output").innerHTML = result;
 }

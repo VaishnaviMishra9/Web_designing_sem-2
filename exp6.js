@@ -9,11 +9,15 @@ function changeBackground() {
     document.body.style.backgroundColor="#"+input;
 
 }
-fontSize=16;
+ let fontSize=16;
 function increaseFontsize() {
-    document.getElementById("heading").style.fontSize = "40px";
-    fontSize=+2;
+    // fontSize=16;
+   // document.getElementById("heading").style.fontSize = "12px";
+    fontSize+=2;
+    document.getElementById("paragraph").style.fontSize = fontSize + "px";
     
+    
+
 }
 function Showhideparagraph() {
     var paragraph = document.getElementById("paragraph");
@@ -28,7 +32,7 @@ function Showhideparagraph() {
 function Reset() {
     document.getElementById("heading").innerText = "Welcome to JavaScript Lab";
     document.body.style.backgroundColor = "white";
-    document.getElementById("heading").style.fontSize = "30px";
+    document.getElementById("paragraph").style.fontSize = "16px";
     document.getElementById("paragraph").style.display = "block";
-} 
-
+    
+}
