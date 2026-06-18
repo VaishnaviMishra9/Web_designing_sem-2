@@ -68,32 +68,3 @@ function totalSalary() {
 }
 
 // AVERAGE
-function averageSalary() {
-    if (employees.length === 0) {
-        document.getElementById("output").innerHTML = "No data";
-        return;
-    }
-
-    let total = employees.reduce((sum, e) => sum + e.salary, 0);
-    let avg = total / employees.length;
-
-    document.getElementById("output").innerHTML =
-        `<h3>Average Salary: ${avg.toFixed(2)}</h3>`;
-}
-
-// COUNT
-function countByDepartment() {
-    let count = {};
-
-    employees.forEach(e => {
-        count[e.dept] = (count[e.dept] || 0) + 1;
-    });
-
-    let result = "<h3>Department Count:</h3>";
-
-    for (let dept in count) {
-        result += `<p>${dept}: ${count[dept]}</p>`;
-    }
-
-    document.getElementById("output").innerHTML = result;
-}
